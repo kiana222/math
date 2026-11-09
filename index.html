@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f9ff">
+  <meta name="description" content="高等数学与线性代数分科学习，含课堂回顾、练习、自测、错题和离线函数绘图。">
+  <title>数学起步 · 大学数学练习</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要内容</a>
+  <header class="top">
+    <div class="topin">
+      <a class="brand" href="#home"><span class="logo" aria-hidden="true">ℳ</span><span>数学起步</span></a>
+      <nav aria-label="主导航">
+        <button data-page="home">首页</button>
+        <button data-page="lessons">知识回顾</button>
+        <button data-page="practice">分步练习</button>
+        <button data-page="exam">阶段自测</button>
+        <button data-page="progress">错题与进度</button>
+        <button data-page="plot">函数绘图</button>
+      </nav>
+      <span id="top-progress" class="topmeta">从一道题开始</span>
+    </div>
+    <div id="subject-bar" class="subject-bar" hidden>
+      <span id="active-subject">当前科目</span>
+      <div class="tabs" role="group" aria-label="切换科目">
+        <button data-subject="calculus">高等数学</button>
+        <button data-subject="algebra">线性代数</button>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">
+    <section id="page-home" class="page" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">数学练习册 / 从定义到解题</div>
+          <h1 id="home-title">把概念讲清楚，<br>把证明写完整。</h1>
+          <p>从你问过的问题出发：先算对误差，再选 N；先数清逆序，再确定行列式的符号。</p>
+          <div class="actions">
+            <button class="btn light" data-subject="calculus">进入高等数学</button>
+            <button class="btn hero-secondary" data-subject="algebra">进入线性代数</button>
+          </div>
+          <div class="hero-tags"><span>极限与导数</span><span>矩阵与向量</span><span>离线函数绘图</span></div>
+        </div>
+        <div class="hero-note" aria-label="数列趋近极限的示意与证明步骤">
+          <div class="graph-heading"><span class="note-label">观察一段数列</span><span class="graph-equation">xₙ = 1 + 1/n</span></div>
+          <svg class="limit-graph" viewBox="0 0 400 250" role="img" aria-labelledby="graph-title graph-desc">
+            <title id="graph-title">数列 1+1/n 趋近 1</title>
+            <desc id="graph-desc">虚线标出 A=1 和 N=5。精度 ε=0.2，所有 n 大于 5 的数列项都在误差带内。</desc>
+            <defs><pattern id="math-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M 28 0 L 0 0 0 28" fill="none" stroke="#cfc9bb" stroke-width=".55"/></pattern></defs>
+            <rect x="35" y="35" width="340" height="188" fill="url(#math-grid)" opacity=".5"/>
+            <rect x="48" y="135" width="318" height="28" fill="#e0edff" opacity=".8"/>
+            <path d="M48 46 V219 H366" class="graph-axis"/>
+            <path d="M48 149 H366" class="graph-limit"/>
+            <path d="M118 70 V219" class="graph-threshold"/>
+            <path d="M62 79 L76 114 L90 125.667 L104 131.5 L118 135 L132 137.333 L146 139 L160 140.25 L174 141.222 L188 142 L202 142.636 L216 143.167 L230 143.615 L244 144 L258 144.333 L272 144.625 L286 144.882 L300 145.111 L314 145.315 L328 145.5" class="graph-trace"/>
+            <g class="graph-early"><circle cx="62" cy="79" r="3.4"/><circle cx="76" cy="114" r="3.4"/><circle cx="90" cy="125.667" r="3.4"/><circle cx="104" cy="131.5" r="3.4"/><circle cx="118" cy="135" r="3.4"/></g>
+            <g class="graph-tail"><circle cx="132" cy="137.333" r="3"/><circle cx="146" cy="139" r="3"/><circle cx="160" cy="140.25" r="3"/><circle cx="174" cy="141.222" r="3"/><circle cx="188" cy="142" r="3"/><circle cx="202" cy="142.636" r="3"/><circle cx="216" cy="143.167" r="3"/><circle cx="230" cy="143.615" r="3"/><circle cx="244" cy="144" r="3"/><circle cx="258" cy="144.333" r="3"/><circle cx="272" cy="144.625" r="3"/><circle cx="286" cy="144.882" r="3"/><circle cx="300" cy="145.111" r="3"/><circle cx="314" cy="145.315" r="3"/><circle cx="328" cy="145.5" r="3"/></g>
+            <g class="graph-label"><text x="22" y="47">xₙ</text><text x="29" y="83">2</text><text x="7" y="153">A=1</text><text x="32" y="236">0</text><text x="108" y="236">N=5</text><text x="364" y="236">n</text><text x="252" y="127">ε = 0.2</text></g>
+          </svg>
+          <div class="proof-line"><span>误差</span><b>|xₙ − A| &lt; ε</b><span>当 n &gt; N</span></div>
+          <ol class="hero-proof"><li>计算误差</li><li>选择 N</li><li>正向验证</li></ol>
+        </div>
+      </div>
+      <div class="stats" id="home-stats"></div>
+      <div class="homegrid">
+        <section class="card">
+          <div class="sectionhead"><div><h2>当前学习路线</h2><p>其他主题等学到后再补充。</p></div></div>
+          <div class="route-row">
+            <span class="route-num">01</span><div><h3>高等数学</h3><p>数列与函数极限、连续性、导数与链式法则。</p></div><button class="btn compact" data-subject="calculus">进入</button>
+          </div>
+          <div class="route-row">
+            <span class="route-num">02</span><div><h3>线性代数</h3><p>排列、行列式、矩阵与秩、向量和线性表示。</p></div><button class="btn compact" data-subject="algebra">进入</button>
+          </div>
+          <div class="scope-note">范围确认于 2026-10-14。复习记录、客观题答对和证明自查分别记录。</div>
+        </section>
+        <section class="card">
+          <div class="sectionhead"><div><h2>这次先练什么</h2><p>根据你已经出现的疑问安排。</p></div></div>
+          <div class="focus-list">
+            <button data-lesson="c-error"><span>01</span><div><b>负极限也要完整减去</b><small>|(2/n−3)−(−3)|</small></div></button>
+            <button data-lesson="c-condition"><span>02</span><div><b>必要条件不够完成证明</b><small>检查能不能正向推回来</small></div></button>
+            <button data-lesson="l-inversions"><span>03</span><div><b>逆序不只发生在相邻位置</b><small>把每一对都数清楚</small></div></button>
+          </div>
+        </section>
+      </div>
+      <section class="card study-method">
+        <div><span class="tag">一次 15—20 分钟</span><h2>回顾一节，练习小题，再完成一道大题。</h2><p>选择、填空、判断和大题分别练习。答案默认折叠，做完后点击核对。</p></div>
+        <button class="btn primary" data-proof="p2">补齐上次的负极限证明</button>
+      </section>
+    </section>
+    <section id="page-lessons" class="page" aria-labelledby="lessons-title">
+      <div class="sectionhead"><div><h1 id="lessons-title">知识回顾</h1><p>从当前学过的概念出发，顺着你的疑问复习。</p></div></div>
+      <div class="lessonlayout">
+        <aside class="card sidebar">
+          <label for="lesson-search" class="sr-only">搜索课程</label>
+          <input id="lesson-search" type="search" class="search" placeholder="搜索标题或易错点">
+          <div id="lesson-list"></div>
+        </aside>
+        <article id="lesson-detail" class="card lessonbody"></article>
+      </div>
+    </section>
+    <section id="page-practice" class="page" aria-labelledby="practice-title">
+      <div class="sectionhead"><div><h1 id="practice-title">分步练习</h1><p>选择题、填空题、判断题与大题。先作答，再点击展开答案。</p></div></div>
+      <div class="tabs" role="group" aria-label="练习类型">
+        <button id="tab-objective" class="active" data-practice-mode="objective">全部小题</button>
+        <button data-practice-mode="choice">选择题</button>
+        <button data-practice-mode="number">填空题</button>
+        <button data-practice-mode="judgment">判断题</button>
+        <button id="tab-proofs" data-practice-mode="proofs">大题</button>
+      </div>
+      <div id="objective-panel">
+        <div class="toolbar filters">
+          <label>主题<select id="practice-lesson"><option value="all">全部主题</option></select></label>
+          <span class="muted" id="practice-count"></span>
+        </div>
+        <div id="practice-list" class="practicegrid"></div>
+      </div>
+      <div id="proof-panel" hidden></div>
+    </section>
+    <section id="page-exam" class="page" aria-labelledby="exam-title">
+      <div class="sectionhead"><div><h1 id="exam-title">阶段自测</h1><p>10 道选择、填空或判断题。提交后点击展开解析，再回到错题复习。</p></div></div>
+      <div class="toolbar filters">
+        <span id="exam-scope" class="tag"></span>
+        <button id="start-exam" class="btn primary">生成一份自测</button>
+        <button id="legacy-exam" class="btn" hidden>查看旧混合自测</button>
+      </div>
+      <div id="exam-area"></div>
+    </section>
+    <section id="page-progress" class="page" aria-labelledby="progress-title">
+      <div class="sectionhead"><div><h1 id="progress-title">错题与进度</h1><p>记录保存在当前浏览器。更换设备或地址前，先导出一份备份。</p></div></div>
+      <div class="stats" id="progress-stats"></div>
+      <div class="toolbar record-actions">
+        <button id="export-records" class="btn">导出学习记录</button>
+        <label class="btn file-label">导入学习记录<input id="import-records" type="file" accept=".json,application/json"></label>
+        <button id="export-questions" class="btn">导出本轮提问</button>
+        <button id="reset-records" class="btn danger">清空本机记录</button>
+      </div>
+      <section class="card">
+        <div class="sectionhead"><div><h2>待复习错题</h2><p>原题重做正确后会移出；一次答对不等于已经完全掌握。</p></div><button class="btn compact" id="review-wrong">重做错题</button></div>
+        <div id="wrong-list"></div>
+      </section>
+      <div class="homegrid">
+        <section class="card"><h2>课程与证明记录</h2><div id="progress-detail"></div></section>
+        <section class="card">
+          <h2>留给下一次讨论的疑问</h2>
+          <label for="study-notes" class="muted">写下卡住的步骤、原推导或想问的问题。</label>
+          <textarea id="study-notes" placeholder="例如：为什么这一步只能推出必要条件？"></textarea>
+          <p class="muted">输入后按科目自动保存。导出本轮提问会包含本科学习记录。</p>
+          <details id="legacy-notes" hidden><summary>查看分科前的疑问</summary><p id="legacy-notes-text"></p></details>
+          <div id="exam-history"></div>
+          <details id="legacy-history" hidden><summary>查看分科前的混合自测成绩</summary><div id="legacy-history-list"></div></details>
+        </section>
+      </div>
+    </section>
+    <section id="page-plot" class="page" aria-labelledby="plot-title">
+      <div class="sectionhead"><div><h1 id="plot-title">函数绘图</h1><p>比较最多三条二维函数曲线。拖动平移，滚轮或按钮缩放；移动指针查看数值。</p></div></div>
+      <div class="plot-layout">
+        <section class="card">
+          <form id="plot-form">
+            <div class="plot-inputs">
+              <label>曲线 1 <span>y =</span><input name="curve" aria-label="曲线 1 表达式" value="sin(x)/x" maxlength="180" spellcheck="false"></label>
+              <label>曲线 2 <span>y =</span><input name="curve" aria-label="曲线 2 表达式" value="1" maxlength="180" spellcheck="false"></label>
+              <label>曲线 3 <span>y =</span><input name="curve" aria-label="曲线 3 表达式" maxlength="180" spellcheck="false"></label>
+            </div>
+            <div class="plot-ranges">
+              <label>x 最小<input name="xmin" type="number" step="any" required></label>
+              <label>x 最大<input name="xmax" type="number" step="any" required></label>
+              <label>y 最小<input name="ymin" type="number" step="any" required></label>
+              <label>y 最大<input name="ymax" type="number" step="any" required></label>
+            </div>
+            <button class="btn primary" type="submit">绘制函数</button>
+            <p id="plot-error" role="status"></p>
+          </form>
+          <h2>课堂示例</h2>
+          <div class="plot-presets">
+            <button class="btn compact" data-graph="limit">sin(x)/x 的极限</button>
+            <button class="btn compact" data-graph="equiv">比较 sin(x) 与 x</button>
+            <button class="btn compact" data-graph="log">观察 ln|x|</button>
+            <button class="btn compact" data-graph="odd">奇次多项式零点</button>
+          </div>
+          <p class="muted">支持 + − × ÷ ^、括号、x、pi、e，以及 sin、cos、tan、ln、exp、sqrt、abs 等。三角函数用弧度。</p>
+          <a href="https://www.wolframalpha.com/" target="_blank" rel="noopener noreferrer">打开 WolframAlpha 官方网站 ↗</a>
+        </section>
+        <section class="card plot-view" aria-label="函数图像与读数">
+          <div class="toolbar plot-actions">
+            <button class="btn compact" id="plot-zoom-in" aria-label="放大">＋</button>
+            <button class="btn compact" id="plot-zoom-out" aria-label="缩小">－</button>
+            <button class="btn compact" id="plot-reset">重置视图</button>
+          </div>
+          <canvas id="plot-canvas" tabindex="0" aria-label="函数图像。方向键平移，加号或减号缩放。"></canvas>
+          <div class="plot-coordinate">
+            <label for="plot-x">读取 x</label>
+            <input id="plot-x" type="number" step="any" value="0">
+            <output id="plot-readout" for="plot-x"></output>
+          </div>
+          <p id="plot-caption" class="muted"></p>
+          <p class="muted">曲线由数值采样绘出。间断点附近请用公式或定义核对。</p>
+        </section>
+      </div>
+    </section>
+    <p class="footer">数学起步 / 从学过的定义，到写清楚的证明。</p>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="content.js"></script>
+  <script src="plot.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
